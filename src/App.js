@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import SignInPage from './components/SignInPage';
+import Home from './components/Home'
+import { useSelector } from 'react-redux';
 
 function App() {
+
+
+  const isToken = useSelector(state=>state.auth.token)
+
+  console.log(isToken)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      {/* <Home /> */}
+   {/* <SignInPage /> */}
+   <Routes>
+   <Route path="/" element={isToken?<Home />:<Navigate to="/login" />} />
+
+    <Route path="/login" element={!isToken?<SignInPage />:<Navigate to="/" />} />
+   </Routes>
     </div>
   );
 }

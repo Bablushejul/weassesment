@@ -54,7 +54,7 @@ dispatch(login(user))
     <div
       className="min-h-screen flex items-center justify-center"
       style={{
-        //backgroundImage: `url(https://images.pexels.com/photos/1629236/pexels-photo-1629236.jpeg?auto=compress&cs=tinysrgb&w=600)`,
+        backgroundImage: `url("https://wallpapers.com/images/high/glowing-blockchain-lights-s84k6jugyy31lai3.webp")`,
         backgroundSize: "cover",
         //backgroundColor:"#F5F1EC"
         backgroundColor:"midnightblue"

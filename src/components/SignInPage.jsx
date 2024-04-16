@@ -4,6 +4,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../authSlice";
 import { json, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const SignInPage = () => {
   const user = JSON.parse(sessionStorage.getItem('user'));
@@ -34,12 +35,12 @@ dispatch(login(user))
 
         console.log(res)
 
+
         sessionStorage.setItem("user", JSON.stringify(res.data.token));
 
         dispatch(login(res.data.token))
 
         navigate("/")
-        
 
     }catch(error){
 
@@ -57,7 +58,7 @@ dispatch(login(user))
         backgroundImage: `url("https://wallpapers.com/images/high/glowing-blockchain-lights-s84k6jugyy31lai3.webp")`,
         backgroundSize: "cover",
         //backgroundColor:"#F5F1EC"
-        backgroundColor:"midnightblue"
+       // backgroundColor:"midnightblue"
       }}
     >
       <div className="max-w-md w-full p-6 bg-white rounded-md shadow-md">
